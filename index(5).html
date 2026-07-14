@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Beauty by Belle in München: Wimpernverlängerung, Lash- und Browlifting, Powder- oder Ombre Brows sowie professionelles Make-up.">
+  <meta name="theme-color" content="#f7e5e7">
+  <title>Beauty by Belle München</title>
+  <link rel="icon" href="logo.jpg">
+  <style>
+    :root {
+      --rose-50: #fff8f8;
+      --rose-100: #fbecef;
+      --rose-200: #f3d7dc;
+      --rose-300: #e8bcc5;
+      --rose-500: #bf7f8c;
+      --rose-700: #8a4f5c;
+      --ink: #3a2d31;
+      --muted: #76676c;
+      --line: rgba(138, 79, 92, .16);
+      --white: #fff;
+      --shadow: 0 24px 70px rgba(91, 49, 60, .15);
+      --shadow-soft: 0 14px 40px rgba(91, 49, 60, .10);
+      --radius: 28px;
+      --page: min(1160px, calc(100% - 36px));
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(232,188,197,.34), transparent 30rem),
+        linear-gradient(180deg, #fffaf9 0%, #ffffff 42%, #fff8f8 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    h1, h2, h3, h4 { margin: 0; line-height: 1.1; font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
+    p { margin: 0; color: var(--muted); }
+    .page { width: var(--page); margin-inline: auto; }
+    .section { padding: 105px 0; }
+    .eyebrow { margin-bottom: 12px; color: var(--rose-700); font-size: .76rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+    .section-head { max-width: 760px; margin-bottom: 46px; }
+    .section-head h2 { margin-bottom: 16px; font-size: clamp(2.1rem, 5vw, 4.4rem); }
+    .section-head p { font-size: 1.05rem; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,250,249,.88);
+      backdrop-filter: blur(18px);
+    }
+    .nav-wrap { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 800; }
+    .brand img { width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: var(--rose-100); border: 1px solid var(--line); }
+    .brand span { display: grid; line-height: 1.2; }
+    .brand small { color: var(--muted); font-size: .65rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+    nav { display: flex; align-items: center; gap: 24px; font-size: .9rem; font-weight: 700; }
+    nav a:hover { color: var(--rose-700); }
+    .nav-cta { padding: 12px 18px; border-radius: 999px; background: var(--ink); color: var(--white); }
+
+    .hero { position: relative; min-height: calc(100vh - 78px); display: grid; align-items: center; padding: 80px 0 90px; overflow: hidden; }
+    .hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; filter: blur(2px); pointer-events: none; }
+    .hero::before { width: 420px; height: 420px; left: -230px; top: 8%; background: rgba(232,188,197,.32); }
+    .hero::after { width: 360px; height: 360px; right: -190px; bottom: 0; background: rgba(244,218,202,.38); }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(45px, 8vw, 100px); }
+    .hero-copy { position: relative; z-index: 2; }
+    .hero h1 { max-width: 700px; margin-bottom: 24px; font-size: clamp(3.1rem, 7.5vw, 6.8rem); letter-spacing: -.045em; }
+    .hero h1 em { color: var(--rose-700); font-style: italic; }
+    .hero-copy > p { max-width: 620px; font-size: clamp(1rem, 2vw, 1.18rem); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 22px; border-radius: 999px; font-size: .92rem; font-weight: 800; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--ink); color: var(--white); box-shadow: 0 13px 30px rgba(58,45,49,.18); }
+    .button-secondary { border: 1px solid var(--line); background: rgba(255,255,255,.76); }
+    .trust-line { display: flex; flex-wrap: wrap; gap: 12px 22px; margin-top: 28px; color: var(--muted); font-size: .82rem; }
+    .trust-line span::before { content: "✓"; margin-right: 7px; color: var(--rose-700); font-weight: 900; }
+
+    .hero-scene { position: relative; min-height: 650px; perspective: 1200px; transform-style: preserve-3d; }
+    .orbit { position: absolute; inset: 9% 2% 5% 2%; border: 1px solid rgba(191,127,140,.34); border-radius: 50%; animation: orbit 18s linear infinite; }
+    .orbit::before, .orbit::after { content: ""; position: absolute; width: 12px; height: 12px; border-radius: 50%; background: var(--rose-500); box-shadow: 0 0 28px rgba(191,127,140,.7); }
+    .orbit::before { top: 12%; left: 13%; }
+    .orbit::after { right: 8%; bottom: 18%; width: 8px; height: 8px; }
+    .photo-card { position: absolute; margin: 0; overflow: hidden; border: 9px solid rgba(255,255,255,.88); background: var(--rose-100); box-shadow: var(--shadow); transform-style: preserve-3d; }
+    .photo-card img { width: 100%; height: 100%; object-fit: contain; background: linear-gradient(145deg, #fbecef, #fff); }
+    .photo-main { width: min(78%, 470px); aspect-ratio: 1 / 1; right: 0; top: 4%; border-radius: 46% 46% 24% 24% / 34% 34% 20% 20%; animation: floatMain 7s ease-in-out infinite; }
+    .photo-float { width: min(48%, 285px); aspect-ratio: 3 / 4; left: 0; bottom: 0; border-radius: 150px 150px 34px 34px; animation: floatSide 8s ease-in-out infinite; }
+    .hero-seal { position: absolute; right: -8px; bottom: 7%; display: grid; place-items: center; width: 145px; height: 145px; padding: 18px; border-radius: 50%; text-align: center; background: rgba(255,250,249,.92); border: 1px solid var(--line); box-shadow: var(--shadow-soft); animation: seal 6s ease-in-out infinite; }
+    .hero-seal strong { font-family: Georgia, serif; color: var(--rose-700); font-size: 2rem; line-height: 1; }
+    .hero-seal span { color: var(--muted); font-size: .62rem; letter-spacing: .13em; text-transform: uppercase; }
+
+    .trust { border-block: 1px solid var(--line); background: rgba(255,255,255,.68); }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .trust-grid article { min-height: 125px; display: grid; align-content: center; gap: 4px; padding: 26px; border-right: 1px solid var(--line); }
+    .trust-grid article:last-child { border-right: 0; }
+    .trust-grid strong { font-size: .95rem; }
+    .trust-grid small { color: var(--muted); }
+
+    .service-list { display: grid; gap: 18px; }
+    details.service { border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,255,255,.82); box-shadow: var(--shadow-soft); overflow: hidden; }
+    details.service[open] { box-shadow: var(--shadow); }
+    summary { list-style: none; cursor: pointer; }
+    summary::-webkit-details-marker { display: none; }
+    .service-summary { min-height: 92px; display: grid; grid-template-columns: 54px 1fr auto; align-items: center; gap: 18px; padding: 20px 24px; }
+    .service-no { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--rose-100); color: var(--rose-700); font-weight: 900; }
+    .service-title strong { display: block; font-family: Georgia, serif; font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
+    .service-title small { color: var(--muted); }
+    .plus { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--line); font-size: 1.35rem; transition: transform .25s ease, background .25s ease; }
+    details[open] .plus { transform: rotate(45deg); background: var(--rose-100); }
+    .service-body { display: grid; grid-template-columns: 1.08fr .92fr; gap: 42px; padding: 12px 24px 32px; border-top: 1px solid var(--line); }
+    .service-copy { padding-top: 26px; }
+    .service-copy h3 { margin-bottom: 14px; font-size: clamp(1.8rem, 4vw, 3.2rem); }
+    .service-copy p + p { margin-top: 12px; }
+    .price-card { align-self: start; margin-top: 26px; padding: 25px; border-radius: 22px; background: linear-gradient(145deg, #fff, #fbecef); border: 1px solid var(--line); }
+    .price-card h4 { margin-bottom: 14px; font-family: inherit; font-size: .78rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    .price-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--line); }
+    .price-row:last-child { border-bottom: 0; }
+    .price-row b { font-family: Georgia, serif; font-size: 1.25rem; font-weight: 500; white-space: nowrap; }
+    .note { margin-top: 14px; padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,.72); color: var(--muted); font-size: .82rem; }
+    .service-gallery { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; margin-top: 6px; }
+    .service-gallery figure { margin: 0; min-height: 380px; display: grid; place-items: center; overflow: hidden; border-radius: 22px; background: var(--rose-100); }
+    .service-gallery img { width: 100%; height: 100%; max-height: 620px; object-fit: contain; }
+    .service-caption { grid-column: 1 / -1; color: var(--muted); font-size: .8rem; }
+
+    .experience { color: #fff; background: linear-gradient(135deg, #3a2d31, #68454e); overflow: hidden; }
+    .experience p, .experience .eyebrow { color: rgba(255,255,255,.72); }
+    .experience-grid { display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; gap: clamp(48px, 8vw, 100px); }
+    .experience-visual { position: relative; min-height: 620px; perspective: 1000px; }
+    .experience-visual img { width: 100%; height: 620px; object-fit: contain; border-radius: 230px 230px 34px 34px; background: rgba(255,255,255,.07); box-shadow: 0 34px 80px rgba(0,0,0,.24); animation: tilt 8s ease-in-out infinite; }
+    .floating-card { position: absolute; right: -28px; bottom: 58px; padding: 18px 22px; border-radius: 18px; background: rgba(255,250,249,.94); color: var(--ink); box-shadow: 0 22px 48px rgba(0,0,0,.22); }
+    .floating-card strong { display: block; font-family: Georgia, serif; font-size: 1.25rem; font-weight: 500; }
+    .floating-card span { color: var(--rose-700); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+    .steps { display: grid; gap: 8px; margin-top: 28px; }
+    .steps article { display: grid; grid-template-columns: 46px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.13); }
+    .steps article > span { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.22); color: #f4c5ce; font-weight: 900; }
+    .steps h3 { margin-bottom: 5px; font-family: inherit; font-size: 1.02rem; font-weight: 800; }
+    .calm-note { margin-top: 26px; padding: 17px 20px; border-left: 3px solid #edb9c2; border-radius: 0 16px 16px 0; background: rgba(255,255,255,.07); color: rgba(255,255,255,.76); font-size: .9rem; }
+
+    .gallery { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 235px; gap: 18px; }
+    .gallery figure { margin: 0; display: grid; place-items: center; overflow: hidden; border-radius: 24px; background: var(--rose-100); box-shadow: var(--shadow-soft); }
+    .gallery figure:nth-child(1) { grid-column: span 5; grid-row: span 2; }
+    .gallery figure:nth-child(2) { grid-column: span 4; }
+    .gallery figure:nth-child(3) { grid-column: span 3; }
+    .gallery figure:nth-child(4) { grid-column: span 7; }
+    .gallery img { width: 100%; height: 100%; object-fit: contain; transition: transform .45s ease; }
+    .gallery figure:hover img { transform: scale(1.025); }
+
+    .price-list-wrap { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 50px; }
+    .price-list-image { padding: 14px; border-radius: 28px; background: #fff; box-shadow: var(--shadow); }
+    .price-list-image img { width: 100%; height: auto; object-fit: contain; border-radius: 18px; }
+
+    .cta { padding: 95px 0; }
+    .cta-box { position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 30px; padding: clamp(34px, 6vw, 72px); border-radius: 34px; background: linear-gradient(135deg, #f8dfe4, #fff5f2); box-shadow: var(--shadow); }
+    .cta-box::after { content: "BBB"; position: absolute; right: -16px; bottom: -56px; color: rgba(138,79,92,.08); font-family: Georgia, serif; font-size: clamp(7rem, 18vw, 15rem); line-height: 1; pointer-events: none; }
+    .cta-box h2 { margin-bottom: 14px; font-size: clamp(2.2rem, 5vw, 4.8rem); }
+    .cta-box > * { position: relative; z-index: 1; }
+
+    footer { padding: 34px 0; border-top: 1px solid var(--line); background: #fffaf9; }
+    .footer-wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; color: var(--muted); font-size: .86rem; }
+
+    @keyframes orbit { to { transform: rotate(360deg); } }
+    @keyframes floatMain { 0%,100% { transform: rotateY(-7deg) rotateX(2deg) translateY(0); } 50% { transform: rotateY(-2deg) rotateX(-1deg) translateY(-12px); } }
+    @keyframes floatSide { 0%,100% { transform: rotateY(8deg) rotateZ(-3deg) translateY(0); } 50% { transform: rotateY(2deg) rotateZ(1deg) translateY(13px); } }
+    @keyframes seal { 0%,100% { transform: translateY(0) rotate(2deg); } 50% { transform: translateY(-10px) rotate(-2deg); } }
+    @keyframes tilt { 0%,100% { transform: rotateY(5deg); } 50% { transform: rotateY(-2deg) translateY(-8px); } }
+
+    @media (max-width: 980px) {
+      .hero-grid, .experience-grid, .price-list-wrap { grid-template-columns: 1fr; }
+      .hero { padding-top: 60px; }
+      .hero-scene { min-height: 590px; }
+      .trust-grid { grid-template-columns: repeat(2,1fr); }
+      .trust-grid article:nth-child(2) { border-right: 0; }
+      .trust-grid article:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .service-body { grid-template-columns: 1fr; }
+      .price-card { margin-top: 0; }
+      .experience-visual { order: 2; }
+      .floating-card { right: 12px; }
+      .cta-box { grid-template-columns: 1fr; }
+      .gallery { grid-auto-rows: 220px; }
+      .gallery figure:nth-child(1) { grid-column: span 7; }
+      .gallery figure:nth-child(2) { grid-column: span 5; }
+      .gallery figure:nth-child(3) { grid-column: span 5; }
+      .gallery figure:nth-child(4) { grid-column: span 7; }
+    }
+
+    @media (max-width: 720px) {
+      :root { --page: min(100% - 24px, 1160px); }
+      .section { padding: 78px 0; }
+      nav a:not(.nav-cta) { display: none; }
+      .nav-cta { padding: 10px 14px; }
+      .brand small { display: none; }
+      .hero { min-height: auto; padding-bottom: 70px; }
+      .hero h1 { font-size: clamp(3rem, 16vw, 5.1rem); }
+      .hero-scene { min-height: 510px; }
+      .photo-main { width: 82%; }
+      .photo-float { width: 50%; }
+      .hero-seal { width: 118px; height: 118px; right: 0; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .trust-grid article { min-height: 95px; border-right: 0; border-bottom: 1px solid var(--line); }
+      .trust-grid article:last-child { border-bottom: 0; }
+      .service-summary { grid-template-columns: 46px 1fr auto; gap: 12px; padding: 18px 16px; }
+      .service-no { width: 42px; height: 42px; }
+      .service-title small { display: none; }
+      .service-body { padding: 8px 16px 24px; }
+      .service-gallery { grid-template-columns: 1fr; }
+      .service-gallery figure { min-height: 330px; }
+      .service-caption { grid-column: 1; }
+      .experience-visual { min-height: 500px; }
+      .experience-visual img { height: 500px; }
+      .gallery { display: grid; grid-template-columns: 1fr; grid-auto-rows: auto; }
+      .gallery figure, .gallery figure:nth-child(n) { grid-column: auto; grid-row: auto; min-height: 340px; }
+      .footer-wrap { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="page nav-wrap">
+      <a class="brand" href="#top" aria-label="Beauty by Belle Startseite">
+        <img src="logo.jpg" alt="Beauty by Belle Logo" width="48" height="48">
+        <span>Beauty by Belle<small>München · Beauty Studio</small></span>
+      </a>
+      <nav aria-label="Hauptnavigation">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#galerie">Galerie</a>
+        <a href="https://www.instagram.com/beautybybelle_munich?igsh=ajFtMXB2OHBueWps" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="nav-cta" href="https://wa.me/4915738708886?text=Hallo%20Beauty%20by%20Belle%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20anfragen." target="_blank" rel="noopener noreferrer">Termin anfragen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="page hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Beauty Studio · München</div>
+          <h1>Dein Look. Deine Ausstrahlung. <em>Dein Moment.</em></h1>
+          <p>Wimpern, Brows und Make-up in einer ruhigen, persönlichen Studioatmosphäre. Vor jeder Behandlung sprechen wir über deinen Wunschlook, damit du dich gut informiert und sicher fühlst.</p>
+          <div class="actions">
+            <a class="button button-primary" href="https://wa.me/4915738708886?text=Hallo%20Beauty%20by%20Belle%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20anfragen." target="_blank" rel="noopener noreferrer">Termin über WhatsApp</a>
+            <a class="button button-secondary" href="#leistungen">Leistungen ansehen</a>
+          </div>
+          <div class="trust-line"><span>Individuelle Beratung</span><span>Hygiene &amp; Sauberkeit</span><span>Professionelle Ergebnisse</span></div>
+        </div>
+
+        <div class="hero-scene" aria-label="Studio- und Porträtbilder">
+          <div class="orbit" aria-hidden="true"></div>
+          <figure class="photo-card photo-main"><img src="belle.jpg" alt="Professionelles Porträt aus dem Beauty-Studio"></figure>
+          <figure class="photo-card photo-float"><img src="studio-1.jpg" alt="Studioaufnahme bei Beauty by Belle"></figure>
+          <div class="hero-seal"><strong>BBB</strong><span>for your beauty. for your confidence.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust" aria-label="Studio-Vorteile">
+      <div class="page trust-grid">
+        <article><strong>Hochwertige Produkte</strong><small>Für einen professionellen Look.</small></article>
+        <article><strong>Individuelle Beratung</strong><small>Abgestimmt auf deine Wünsche.</small></article>
+        <article><strong>Hygiene &amp; Sauberkeit</strong><small>Eine gepflegte Studioatmosphäre.</small></article>
+        <article><strong>Transparente Preise</strong><small>Alle Preise klar auf einen Blick.</small></article>
+      </div>
+    </section>
+
+    <section class="section" id="leistungen">
+      <div class="page">
+        <div class="section-head">
+          <div class="eyebrow">Leistungen</div>
+          <h2>Beauty-Behandlungen, die zu dir passen.</h2>
+          <p>Öffne den gewünschten Bereich. Dort findest du eine kurze Beschreibung, Preise und passende Ergebnisansichten.</p>
+        </div>
+
+        <div class="service-list">
+          <details class="service" open>
+            <summary class="service-summary">
+              <span class="service-no">01</span>
+              <span class="service-title"><strong>Wimpernverlängerung</strong><small>Light, Medium oder Mega · Volume, Wispy oder Wet Look</small></span>
+              <span class="plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="service-body">
+              <div class="service-copy">
+                <h3>Von dezent bis ausdrucksstark.</h3>
+                <p>Gemeinsam wird ein Stil gewählt, der zu deinen Wünschen passt: klassisches Volumen, ein lockerer Wispy-Look oder ein definierter Wet Look. Die Intensität ist als Light, Medium oder Mega verfügbar.</p>
+                <p>Vor dem Termin klären wir den gewünschten Effekt. Ergebnis und Haltbarkeit können je nach natürlichen Wimpern und Pflege variieren.</p>
+                <div class="actions"><a class="button button-primary" href="https://wa.me/4915738708886?text=Hallo%20Beauty%20by%20Belle%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Wimpernverl%C3%A4ngerung.%20Welche%20Termine%20sind%20frei%3F" target="_blank" rel="noopener noreferrer">Wimpern-Termin anfragen</a></div>
+              </div>
+              <div class="price-card">
+                <h4>Neuset</h4>
+                <div class="price-row"><span>Light Volume / Wispy / Wet Look</span><b>65 €</b></div>
+                <div class="price-row"><span>Medium Volume / Wispy / Wet Look</span><b>75 €</b></div>
+                <div class="price-row"><span>Mega Volumen / Wispy / Wet Look</span><b>85 €</b></div>
+                <div class="note"><strong>Nachfüllen:</strong> nach 3 Wochen 10 € weniger als der Neupreis; nach 2 Wochen 20 € weniger als der Neupreis.</div>
+              </div>
+              <div class="service-gallery">
+                <figure><img src="studio-1.jpg" alt="Studioansicht mit professionellem Wimpern-Look"></figure>
+                <figure><img src="studio-2.jpg" alt="Weitere Studioansicht mit Wimpern-Styling"></figure>
+                <div class="service-caption">Die Bilder zeigen Ergebnisansichten aus dem Studio. Es handelt sich nicht um gekennzeichnete Vorher-Nachher-Paare.</div>
+              </div>
+            </div>
+          </details>
+
+          <details class="service">
+            <summary class="service-summary">
+              <span class="service-no">02</span>
+              <span class="service-title"><strong>Lashlifting &amp; Browlifting</strong><small>Ein gepflegter, angehobener Look</small></span>
+              <span class="plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="service-body">
+              <div class="service-copy">
+                <h3>Mehr Ausdruck mit den eigenen Härchen.</h3>
+                <p>Beim Lash- oder Browlifting werden die vorhandenen Härchen in eine gewünschte Form gebracht. Ziel ist ein gepflegter, geöffneter und definierter Look, ohne einen künstlichen Effekt zu versprechen.</p>
+                <p>Vor der Behandlung besprechen wir Form und gewünschte Intensität. Die Wirkung kann je nach Ausgangslage unterschiedlich ausfallen.</p>
+                <div class="actions"><a class="button button-primary" href="https://wa.me/4915738708886?text=Hallo%20Beauty%20by%20Belle%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Lashlifting%20oder%20Browlifting.%20Welche%20Termine%20sind%20frei%3F" target="_blank" rel="noopener noreferrer">Lifting-Termin anfragen</a></div>
+              </div>
+              <div class="price-card">
+                <h4>Preis laut Preisliste</h4>
+                <div class="price-row"><span>Lashlifting &amp; Browlifting</span><b>49 €</b></div>
+                <div class="note">Die Preisliste nennt diese Leistung in einer gemeinsamen Zeile. Einzelheiten bitte vor der Buchung direkt erfragen.</div>
+              </div>
+              <div class="service-gallery">
+                <figure><img src="brows-1.jpg" alt="Nahaufnahme eines gepflegten Lash- und Brow-Ergebnisses"></figure>
+                <figure><img src="brows-2.jpg" alt="Detailansicht eines professionellen Lash- und Brow-Looks"></figure>
+                <div class="service-caption">Ergebnisansichten aus dem Studio; keine als Vorher-Nachher gekennzeichneten Bildpaare.</div>
+              </div>
+            </div>
+          </details>
+
+          <details class="service">
+            <summary class="service-summary">
+              <span class="service-no">03</span>
+              <span class="service-title"><strong>Powder oder Ombre Brows</strong><small>Pudrige Definition mit weichem Verlauf</small></span>
+              <span class="plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="service-body">
+              <div class="service-copy">
+                <h3>Definierte Brows mit harmonischem Verlauf.</h3>
+                <p>Powder- oder Ombre Brows erzeugen eine pudrige, klarere Augenbrauen-Optik. Form, Intensität und gewünschter Verlauf werden vorab besprochen und auf den persönlichen Wunschlook abgestimmt.</p>
+                <p>Die Nachbehandlung ist laut Preisliste im Preis enthalten. Für Eignung, Ablauf und individuelle Fragen erfolgt eine persönliche Beratung.</p>
+                <div class="actions"><a class="button button-primary" href="https://wa.me/4915738708886?text=Hallo%20Beauty%20by%20Belle%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Powder%20oder%20Ombre%20Brows.%20Welche%20Termine%20sind%20frei%3F" target="_blank" rel="noopener noreferrer">Brow-Termin anfragen</a></div>
+              </div>
+              <div class="price-card">
+                <h4>Preis laut Preisliste</h4>
+                <div class="price-row"><span>inkl. Nachbehandlung</span><b>330 €</b></div>
+              </div>
+              <div class="service-gallery">
+                <figure><img src="brows-1.jpg" alt="Augenbrauen-Ergebnisansicht aus dem Studio"></figure>
+                <figure><img src="brows-2.jpg" alt="Weitere Augenbrauen-Ergebnisansicht aus dem Studio"></figure>
+                <div class="service-caption">Ergebnisansichten aus dem Studio; keine als Vorher-Nachher gekennzeichneten Bildpaare.</div>
+              </div>
+            </div>
+          </details>
+
+          <details class="service">
+            <summary class="service-summary">
+              <span class="service-no">04</span>
+              <span class="service-title"><strong>Make-up</strong><small>Tages-, Abend- und Brautmake-up</small></span>
+              <span class="plus" aria-hidden="true">+</span>
+            </summary>
+            <div class="service-body">
+              <div class="service-copy">
+                <h3>Professionelles Make-up für deinen Anlass.</h3>
+                <p>Ob natürlicher Tageslook, ausdrucksstarkes Abendmake-up oder Brautmake-up: Der gewünschte Stil wird vorab besprochen und passend zum Anlass umgesetzt.</p>
+                <p>Haarstyling kann laut Preisliste ergänzt werden. Wünsche und zeitlicher Ablauf sollten bei der Anfrage direkt angegeben werden.</p>
+                <div class="actions"><a class="button button-primary" href="https://wa.me/4915738708886?text=Hallo%20Beauty%20by%20Belle%2C%20ich%20interessiere%20mich%20f%C3%BCr%20ein%20Make-up.%20Welche%20Termine%20sind%20frei%3F" target="_blank" rel="noopener noreferrer">Make-up-Termin anfragen</a></div>
+              </div>
+              <div class="price-card">
+                <h4>Preise</h4>
+                <div class="price-row"><span>Tagesmake-up</span><b>59 €</b></div>
+                <div class="price-row"><span>Abendmake-up</span><b>99 €</b></div>
+                <div class="price-row"><span>Brautmake-up</span><b>180 €</b></div>
+                <div class="price-row"><span>Haarstyling zusätzlich</span><b>20 €</b></div>
+              </div>
+              <div class="service-gallery">
+                <figure><img src="belle.jpg" alt="Professioneller Make-up-Look"></figure>
+                <figure><img src="studio-2.jpg" alt="Beauty-Studioaufnahme mit Make-up-Look"></figure>
+                <div class="service-caption">Die Bilder dienen als Stil- und Ergebnisansichten aus dem Studio.</div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experience" id="ablauf">
+      <div class="page experience-grid">
+        <div class="experience-visual">
+          <img src="studio-2.jpg" alt="Studioatmosphäre bei Beauty by Belle">
+          <div class="floating-card"><strong>Du darfst Fragen stellen.</strong><span>Persönlich &amp; transparent</span></div>
+        </div>
+        <div>
+          <div class="eyebrow">Dein Termin</div>
+          <h2 style="font-size:clamp(2.2rem,5vw,4.8rem); margin-bottom:18px;">Informiert ankommen. Entspannt behandelt werden.</h2>
+          <p>Unsicherheit vor einer neuen Beauty-Behandlung ist normal. Deshalb wird der Wunschlook vorab besprochen, bevor die Behandlung beginnt.</p>
+          <div class="steps">
+            <article><span>1</span><div><h3>Anfrage senden</h3><p>Schreibe über WhatsApp, welche Leistung dich interessiert und wann du ungefähr Zeit hast.</p></div></article>
+            <article><span>2</span><div><h3>Wünsche besprechen</h3><p>Form, Stil und gewünschte Intensität werden vor dem Termin abgestimmt.</p></div></article>
+            <article><span>3</span><div><h3>Behandlung &amp; Ergebnis</h3><p>Du erhältst eine Leistung auf Basis der besprochenen Wünsche und deiner individuellen Ausgangslage.</p></div></article>
+          </div>
+          <div class="calm-note"><strong>Wichtig:</strong> Ergebnisse und Haltbarkeit können individuell unterschiedlich sein. Bei Unsicherheiten oder besonderen Voraussetzungen bitte vor der Buchung direkt nachfragen.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="galerie">
+      <div class="page">
+        <div class="section-head">
+          <div class="eyebrow">Einblicke</div>
+          <h2>Studio, Beauty und Details.</h2>
+          <p>Hochauflösende Originalbilder werden vollständig dargestellt und nicht hart angeschnitten.</p>
+        </div>
+        <div class="gallery">
+          <figure><img src="studio-1.jpg" alt="Studioaufnahme Beauty by Belle"></figure>
+          <figure><img src="brows-1.jpg" alt="Lash- und Brow-Detailansicht"></figure>
+          <figure><img src="belle.jpg" alt="Beauty-Porträt"></figure>
+          <figure><img src="studio-2.jpg" alt="Weitere Studioaufnahme Beauty by Belle"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="page price-list-wrap">
+        <div class="section-head" style="margin-bottom:0;">
+          <div class="eyebrow">Preisliste</div>
+          <h2>Alle Preise auf einen Blick.</h2>
+          <p>Die Angaben wurden direkt aus der bereitgestellten Preisliste übernommen. Bei Fragen zu einer Leistung oder zu Kombinationsmöglichkeiten bitte vorab über WhatsApp nachfragen.</p>
+          <div class="actions"><a class="button button-primary" href="https://wa.me/4915738708886?text=Hallo%20Beauty%20by%20Belle%2C%20ich%20habe%20eine%20Frage%20zu%20einer%20Leistung%20oder%20zum%20Preis." target="_blank" rel="noopener noreferrer">Frage über WhatsApp</a></div>
+        </div>
+        <div class="price-list-image"><img src="preisliste.jpg" alt="Preisliste von Beauty by Belle"></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="page cta-box">
+        <div><div class="eyebrow">Bereit für deinen Termin?</div><h2>Schreib uns einfach.</h2><p>Teile uns mit, welche Behandlung dich interessiert. Wir antworten dir mit den nächsten freien Möglichkeiten.</p></div>
+        <div class="actions"><a class="button button-primary" href="https://wa.me/4915738708886?text=Hallo%20Beauty%20by%20Belle%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20anfragen." target="_blank" rel="noopener noreferrer">WhatsApp öffnen</a><a class="button button-secondary" href="https://www.instagram.com/beautybybelle_munich?igsh=ajFtMXB2OHBueWps" target="_blank" rel="noopener noreferrer">Instagram ansehen</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="page footer-wrap">
+      <a class="brand" href="#top"><img src="logo.jpg" alt="Beauty by Belle Logo" width="48" height="48"><span>Beauty by Belle<small>for your beauty. for your confidence.</small></span></a>
+      <div class="footer-links"><span>© <span id="year">2026</span> Beauty by Belle</span><a href="https://www.instagram.com/beautybybelle_munich?igsh=ajFtMXB2OHBueWps" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://wa.me/4915738708886" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+    </div>
+  </footer>
+  <script>
+    const year = document.getElementById('year');
+    if (year) year.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
