@@ -43,7 +43,7 @@ main{display:block}.section,.hero,.contact-section,.faq-section{width:min(100%,c
 .hero-copy{max-width:620px}.eyebrow{margin:0 0 12px;font-size:11px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:#b17d75}
 .hero h1{margin:0;font-family:var(--serif);font-size:clamp(56px,5.8vw,88px);line-height:.95;letter-spacing:-.02em}.hero h1 em{font-style:italic;color:#c88f87;font-weight:500}.lead{margin:22px 0 0;max-width:560px;font-size:18px;line-height:1.8;color:var(--muted)}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn-primary{background:linear-gradient(135deg,#3f232b,#211518);color:#fff;box-shadow:0 18px 36px rgba(58,33,39,.14)}.btn-secondary{background:rgba(255,255,255,.76);border:1px solid rgba(179,137,75,.22);color:#3e2b30}.btn.small{min-height:46px;padding:0 18px}
-.hero-meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}.hero-meta>div{min-width:190px;padding:16px 18px;border-radius:22px;background:rgba(255,255,255,.74);border:1px solid rgba(179,137,75,.12);box-shadow:0 10px 24px rgba(94,62,69,.06)}.meta-label{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#a47f4f;font-weight:800;margin-bottom:6px}.hero-meta strong{display:block;font-size:18px}.hero-meta small{display:block;margin-top:4px;color:var(--muted)}
+.hero-meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}.hero-meta>div,.hero-meta>a{min-width:190px;padding:16px 18px;border-radius:22px;background:rgba(255,255,255,.74);border:1px solid rgba(179,137,75,.12);box-shadow:0 10px 24px rgba(94,62,69,.06)}.meta-label{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#a47f4f;font-weight:800;margin-bottom:6px}.hero-meta strong{display:block;font-size:18px}.hero-meta small{display:block;margin-top:4px;color:var(--muted)}
 .hero-visual{position:relative;display:grid;justify-items:center}.hero-frame{width:min(100%,460px);background:linear-gradient(180deg,#f8e5e2,#fff);padding:14px;border-radius:36px;box-shadow:var(--shadow)}.hero-frame img{width:100%;aspect-ratio:5/5.6;object-fit:cover;border-radius:28px}.hero-badge{position:absolute;left:18px;bottom:12px;padding:12px 16px;border-radius:999px;background:rgba(35,23,25,.92);color:#fff;font-size:12px;font-weight:800;box-shadow:0 10px 24px rgba(35,23,25,.22)}
 .info-strip{width:min(100%,calc(var(--max) + 48px));margin:0 auto;padding:0 24px 12px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.info-strip article{padding:22px 20px;border-radius:24px;background:rgba(255,255,255,.78);border:1px solid rgba(179,137,75,.12);box-shadow:0 10px 26px rgba(90,58,65,.05)}.info-strip strong{display:block;font-family:var(--serif);font-size:26px;line-height:1.05}.info-strip span{display:block;margin-top:8px;font-size:13px;line-height:1.6;color:var(--muted)}
 .section{padding-top:76px;padding-bottom:12px}.section.compact{padding-top:66px}.section-heading{max-width:760px;margin-bottom:28px}.section-heading.narrow{max-width:680px}.section-heading.left{max-width:100%}.section-heading h2{margin:0;font-family:var(--serif);font-size:clamp(42px,4.7vw,66px);line-height:.98;letter-spacing:-.02em}.section-heading p:last-child{margin:14px 0 0;color:var(--muted);font-size:16px;line-height:1.75}.narrow-left{max-width:360px}
@@ -68,3 +68,175 @@ footer{width:min(100%,calc(var(--max) + 48px));margin:0 auto;padding:48px 24px 2
 }
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.nav-cta,.menu-toggle span,.main-nav{transition:none}}
+
+.google-review-card{display:block;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}.google-review-card:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(94,62,69,.10);border-color:rgba(179,137,75,.28)}.google-review-card small{color:#a36f67!important;font-weight:800}.info-strip{grid-template-columns:repeat(3,1fr)}
+@media(max-width:1020px){.info-strip{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.hero-meta>a{min-width:0}.info-strip{grid-template-columns:1fr}}
+
+/* ==========================================================
+   BEAUTY BY BELLE v5.4 — consolidated premium/mobile polish
+   Includes v5.2 Google review link + v5.3 mobile overflow fix
+   ========================================================== */
+html,body{overflow-x:hidden}
+.hero,.section,.info-strip,.contact-section,.faq-section,footer{max-width:1248px}
+.hero{padding-top:18px;padding-bottom:24px;gap:34px}
+.hero h1{font-size:clamp(52px,5.2vw,80px)}
+.lead{margin-top:18px;line-height:1.68}
+.hero-actions{margin-top:24px}
+.hero-meta{margin-top:20px}
+.hero-meta>div,.google-review-card{padding:14px 16px;border-radius:20px}
+.google-review-card{display:block;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.google-review-card:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(94,62,69,.10);border-color:rgba(179,137,75,.28)}
+.google-review-card small{color:#a36f67!important;font-weight:800}
+.info-strip{grid-template-columns:repeat(3,1fr);padding-top:4px}
+.info-strip article{padding:18px 18px;border-radius:22px}
+.info-strip strong{font-size:23px}
+.section{padding-top:62px}
+.section.compact{padding-top:50px}
+.section-heading{margin-bottom:24px}
+.section-heading h2{font-size:clamp(40px,4.2vw,60px)}
+.section-heading p:last-child{margin-top:12px;line-height:1.62}
+.service-grid{gap:14px}
+.service-card{min-height:255px;padding:22px;border-radius:25px}
+.service-card h3{font-size:31px;margin-top:15px}
+.service-card p{font-size:14px;line-height:1.6}
+.service-price{padding-top:17px;font-size:40px}
+.service-card>a{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;margin-top:14px;min-height:44px;padding:0 16px;border-radius:999px;background:linear-gradient(135deg,#4a2732,#27181d);color:#fff!important;box-shadow:0 10px 22px rgba(58,33,39,.12)}
+.service-card>a::after{content:'↗';color:#e5c089;font-size:16px}
+.pricing-section{padding-top:64px}
+.pricing-grid{gap:14px}
+.price-box{padding:22px 20px;border-radius:25px}
+.price-box strong{font-size:44px}
+.feed-section{padding-top:66px}
+.feed-grid{gap:14px}
+.feed-card{border-radius:26px}
+.image-large{min-height:470px}.image-small{min-height:230px}
+.feed-copy{left:14px;right:14px;bottom:14px;padding:15px;border-radius:18px}
+.feed-card h3{font-size:36px}
+.text-card{padding:26px}
+.facial-section{padding-top:66px}
+.facial-editorial{grid-template-columns:1fr 1fr;gap:14px;padding:14px;border-radius:30px}
+.facial-intro{padding:25px;border-radius:24px;min-width:0}
+.facial-intro h2{font-size:clamp(38px,4vw,54px);line-height:1;overflow-wrap:anywhere;hyphens:auto}
+.facial-intro>p:last-of-type{margin-top:14px;line-height:1.62}
+.facial-price-row{margin-top:20px;padding-top:18px;gap:14px}
+.facial-price-row>div strong{font-size:46px}
+.facial-cta{padding:0 16px;white-space:normal;text-align:center}
+.facial-steps{gap:8px}
+.facial-steps article{min-height:78px;padding:14px 16px;border-radius:20px;grid-template-columns:44px 1fr;gap:12px}
+.facial-steps article>span{width:40px;height:40px;font-size:16px}
+.facial-steps strong{font-size:22px}
+.about-section{padding-top:66px;gap:20px}
+.about-copy h2{font-size:clamp(42px,4.2vw,60px);overflow-wrap:anywhere;hyphens:auto}
+.about-lead{font-size:23px}
+.faq-section{padding-top:66px;gap:22px}
+.faq-list summary{min-height:70px;font-size:24px}
+.contact-section{padding-top:64px;padding-bottom:34px;gap:14px}
+.contact-card,.location-card{padding:28px;border-radius:28px;min-width:0}
+.contact-card h2{font-size:clamp(40px,4vw,56px);overflow-wrap:anywhere;hyphens:auto}
+.location-card h3{font-size:38px;overflow-wrap:anywhere;hyphens:auto}
+.contact-buttons .btn{min-width:140px}
+footer{padding-top:38px;padding-bottom:34px}
+
+@media(max-width:1020px){
+  .info-strip{grid-template-columns:repeat(3,1fr)}
+  .facial-editorial{grid-template-columns:1fr}
+}
+
+@media(max-width:640px){
+  body{padding-top:78px;padding-bottom:132px}
+  .site-header{box-shadow:0 8px 24px rgba(73,43,48,.04)}
+  .hero{padding:14px 16px 20px;gap:22px}
+  .hero h1{font-size:clamp(43px,12.4vw,56px);line-height:.98}
+  .lead{font-size:15px;line-height:1.62;margin-top:14px}
+  .hero-actions{margin-top:19px;gap:10px}
+  .btn{min-height:54px}
+  .hero-meta{gap:10px;margin-top:16px}
+  .hero-meta>div,.google-review-card{padding:14px 15px;border-radius:20px;min-width:0}
+  .hero-meta strong{font-size:17px}
+  .hero-frame{padding:10px;border-radius:28px}
+  .hero-frame img{border-radius:21px;aspect-ratio:4/4.7}
+  .hero-badge{font-size:11px;padding:10px 12px}
+  .info-strip{grid-template-columns:1fr;gap:9px;padding:0 16px 4px}
+  .info-strip article{padding:16px 17px;border-radius:20px}
+  .info-strip strong{font-size:21px}
+  .info-strip span{margin-top:5px;font-size:12px;line-height:1.5}
+  .section{padding-top:50px;padding-inline:16px}
+  .section.compact{padding-top:44px}
+  .section-heading{margin-bottom:20px}
+  .section-heading h2{font-size:clamp(36px,10.8vw,48px);line-height:1}
+  .section-heading p:last-child{font-size:14px;line-height:1.6}
+  .service-grid,.pricing-grid,.feed-grid{gap:12px}
+  .service-card{padding:20px;border-radius:23px}
+  .service-card h3{font-size:29px}
+  .service-price{font-size:38px}
+  .service-card>a{min-height:47px;padding:0 17px;font-size:13px}
+  .price-box{padding:19px;border-radius:23px}
+  .price-box strong{font-size:40px}
+  .price-note{padding:17px 18px}
+  .feed-section{padding-top:52px}
+  .image-large{min-height:400px}.image-small{min-height:300px}
+  .feed-card h3{font-size:31px}
+  .text-card{padding:22px;min-height:235px}
+  .facial-section{padding-top:52px}
+  .facial-editorial{padding:10px;border-radius:26px;gap:10px}
+  .facial-intro{padding:21px 17px;border-radius:21px;text-align:left}
+  .facial-intro h2{font-size:clamp(31px,9.4vw,41px);line-height:1.02;max-width:100%;overflow-wrap:anywhere;word-break:normal;hyphens:auto}
+  .facial-intro>p:last-of-type{font-size:14px;line-height:1.6}
+  .facial-price-row{align-items:stretch;flex-direction:column;margin-top:18px;padding-top:16px}
+  .facial-price-row>div strong{font-size:42px}
+  .facial-cta{width:100%;min-height:50px}
+  .facial-steps{gap:8px}
+  .facial-steps article{min-height:72px;padding:13px 13px;grid-template-columns:42px 1fr;border-radius:19px}
+  .facial-steps article>span{width:38px;height:38px}
+  .facial-steps strong{font-size:20px}
+  .about-section{padding-top:52px;gap:16px}
+  .about-image-wrap{padding:9px;border-radius:26px}
+  .about-image-wrap img{border-radius:19px}
+  .about-copy{padding:5px 2px}
+  .about-copy h2{font-size:clamp(37px,10.5vw,47px);line-height:1.02;overflow-wrap:anywhere;hyphens:auto}
+  .about-lead{font-size:21px}
+  .about-copy p:last-of-type{font-size:14px;line-height:1.65}
+  .faq-section{padding-top:52px;padding-inline:16px;gap:15px}
+  .faq-list summary{font-size:20px;min-height:66px}
+  .faq-list p{font-size:14px;line-height:1.6}
+  .contact-section{padding:52px 16px 28px;gap:12px}
+  .contact-card,.location-card{padding:22px 17px;border-radius:24px;text-align:left}
+  .contact-card h2{font-size:clamp(33px,9.7vw,42px);line-height:1.02;max-width:100%;overflow-wrap:anywhere;hyphens:auto}
+  .contact-card p:not(.eyebrow){font-size:14px;line-height:1.6}
+  .contact-buttons{display:grid;grid-template-columns:1fr;justify-items:stretch;gap:9px}
+  .contact-buttons .btn{width:100%;min-width:0;max-width:100%;min-height:50px;text-align:center}
+  .location-card h3{font-size:34px;line-height:1.03;overflow-wrap:anywhere;hyphens:auto}
+  .mobile-cta{padding:9px 14px calc(16px + env(safe-area-inset-bottom))}
+  .mobile-cta a{min-height:54px;font-size:17px}
+  footer{padding:34px 16px 118px}
+}
+
+/* ==========================================================
+   BEAUTY BY BELLE v5.5 — subtle in-studio partner promotion
+   ========================================================== */
+.studio-extra-section{padding-top:58px;padding-bottom:6px}
+.studio-extra-heading{max-width:720px;margin-bottom:22px}
+.studio-extra-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.studio-extra-card{position:relative;overflow:hidden;padding:24px;border-radius:26px;background:linear-gradient(155deg,rgba(255,255,255,.92),rgba(249,237,235,.92));border:1px solid rgba(179,137,75,.13);box-shadow:0 12px 28px rgba(90,58,65,.05)}
+.studio-extra-card::after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-95px;top:-95px;background:radial-gradient(circle,rgba(206,165,104,.12),rgba(206,165,104,0) 70%);pointer-events:none}
+.studio-extra-card-soft{background:linear-gradient(155deg,rgba(255,252,251,.95),rgba(246,229,226,.9))}
+.studio-extra-topline{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.studio-extra-badge{display:inline-flex;align-items:center;min-height:30px;padding:0 11px;border-radius:999px;background:#f5e2df;color:#9d6f67;font-size:9px;letter-spacing:.17em;text-transform:uppercase;font-weight:850}
+.studio-extra-mark{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#3d252c,#23171b);color:#e8c996;font-family:var(--serif);font-size:17px;box-shadow:0 8px 18px rgba(52,31,37,.10)}
+.studio-extra-card h3{position:relative;z-index:1;margin:18px 0 8px;font-family:var(--serif);font-size:31px;line-height:1}
+.studio-extra-card>p{position:relative;z-index:1;margin:0;color:var(--muted);font-size:14px;line-height:1.65}
+.studio-extra-tags{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.studio-extra-tags span{display:inline-flex;align-items:center;min-height:31px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.72);border:1px solid rgba(179,137,75,.12);color:#6f5960;font-size:10px;font-weight:750}
+.studio-extra-link{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:#98685f;font-size:12px;font-weight:850;border-bottom:1px solid rgba(152,104,95,.22);padding-bottom:4px}
+.studio-extra-link span{color:var(--gold)}
+
+@media(max-width:760px){
+  .studio-extra-section{padding-top:48px}
+  .studio-extra-grid{grid-template-columns:1fr;gap:10px}
+  .studio-extra-card{padding:20px;border-radius:23px}
+  .studio-extra-card h3{font-size:28px;margin-top:15px}
+  .studio-extra-card>p{font-size:13px;line-height:1.6}
+  .studio-extra-tags{margin-top:15px}
+  .studio-extra-link{margin-top:15px}
+}
