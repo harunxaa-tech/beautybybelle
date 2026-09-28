@@ -3,203 +3,317 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#fffaf7">
-  <meta name="description" content="Beauty by Belle München – Powder/Ombre Brows, Wimpernverlängerung, Lash- & Browlifting, Make-up und klassische Gesichtsbehandlungen.">
-  <title>Beauty by Belle | Beauty Studio München</title>
+  <meta name="theme-color" content="#fff8f7">
+  <meta name="description" content="Beauty by Belle München – luxuriöse Beauty Treatments mit rosé-goldenem Design: Wimpern, Powder Brows, Gesichtsbehandlung und mehr.">
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:title" content="Beauty by Belle München">
+  <meta property="og:description" content="Belle – Beauty Artist und Gründerin von Beauty by Belle. Luxuriöse Beauty Treatments in München.">
+  <meta property="og:type" content="website">
+  <title>Beauty by Belle | Luxury Beauty Studio München</title>
   <link rel="icon" href="logo-bbb.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="styles.css?v=3.0.0">
+  <link rel="stylesheet" href="styles.css?v=5.0.0">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BeautySalon",
+    "name":"Beauty by Belle",
+    "telephone":"+49 1512 0498323",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Corneliusstraße 38",
+      "postalCode":"80469",
+      "addressLocality":"München",
+      "addressCountry":"DE"
+    },
+    "sameAs":["https://www.instagram.com/beautybybelle_munich/"],
+    "priceRange":"€€"
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
   <header class="site-header" id="top">
     <a class="brand" href="#top" aria-label="Beauty by Belle Startseite">
-      <img src="logo-bbb.jpg" alt="Beauty by Belle Logo" width="52" height="52">
-      <span><strong>Beauty by Belle</strong><small>Munich Beauty Studio</small></span>
+      <img src="logo-bbb.jpg" alt="Beauty by Belle Logo" width="54" height="54">
+      <span class="brand-copy">
+        <strong>Beauty by Belle</strong>
+        <small>Luxury Beauty Studio · München</small>
+      </span>
     </a>
-    <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+
+    <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span>
     </button>
-    <nav class="main-nav" id="main-nav">
-      <a href="#behandlungen">Behandlungen</a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+      <a href="#services">Services</a>
       <a href="#preise">Preise</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#about">Über mich</a>
-      <a class="nav-cta" href="https://wa.me/4915120498323?text=Hallo%20Annabelle%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20bei%20Beauty%20by%20Belle%20anfragen." target="_blank" rel="noopener">Termin anfragen</a>
+      <a href="#feed">Feed</a>
+      <a href="#belle">Über Belle</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="nav-cta" href="https://wa.me/4915120498323?text=Hallo%20Belle%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20bei%20Beauty%20by%20Belle%20anfragen." target="_blank" rel="noopener">Termin anfragen</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero section-anchor">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Beauty Studio · München</p>
-        <h1>Deine natürliche Schönheit.<br><em>Präzise veredelt.</em></h1>
-        <p class="lead">Powder Brows, Wimpernverlängerung, Lash- & Browlifting, Make-up und klassische Gesichtsbehandlungen – individuell auf Dich abgestimmt.</p>
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Luxury Beauty Studio · München</p>
+        <h1>Luxuriöse Beauty Treatments <em>mit femininer Eleganz.</em></h1>
+        <p class="lead">Beauty by Belle steht für ein edles, rosé-goldenes Studio-Gefühl, individuelle Beratung und präzise Ergebnisse bei Wimpern, Brows und Skin Treatments.</p>
+
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://wa.me/4915120498323?text=Hallo%20Annabelle%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20bei%20Beauty%20by%20Belle%20anfragen." target="_blank" rel="noopener">Termin über WhatsApp</a>
-          <a class="btn btn-ghost" href="#behandlungen">Behandlungen ansehen</a>
+          <a class="btn btn-primary" href="https://wa.me/4915120498323?text=Hallo%20Belle%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20bei%20Beauty%20by%20Belle%20anfragen." target="_blank" rel="noopener">Termin über WhatsApp</a>
+          <a class="btn btn-secondary" href="#preise">Preise ansehen</a>
         </div>
-        <a class="rating-pill" href="https://www.google.com/maps/search/?api=1&query=Beauty+by+Belle+Corneliusstra%C3%9Fe+38+80469+M%C3%BCnchen" target="_blank" rel="noopener">
-          <span class="stars">★★★★★</span><strong>5,0</strong><span>· 10 Google-Rezensionen</span>
-        </a>
-      </div>
-      <div class="hero-visual reveal">
-        <figure class="hero-card hero-card-main"><img src="annabelle.jpg" alt="Annabelle von Beauty by Belle" fetchpriority="high"></figure>
-        <figure class="hero-card hero-card-side"><img src="studio.jpg" alt="Beauty by Belle Studio in München" fetchpriority="high"></figure>
-        <div class="floating-note"><span>✦</span> Corneliusstraße 38<br><small>80469 München</small></div>
-      </div>
-    </section>
 
-    <section class="trust-strip" aria-label="Vorteile">
-      <div><span>01</span><b>Individuelle Beratung</b><small>Look, Form und Intensität passend zu Dir.</small></div>
-      <div><span>02</span><b>Saubere Ergebnisse</b><small>Präzise Arbeit mit Liebe zum Detail.</small></div>
-      <div><span>03</span><b>Persönliches Studio</b><small>Ruhige Atmosphäre in München.</small></div>
-    </section>
-
-    <section class="section section-anchor" id="behandlungen">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Treatments</p>
-        <h2>Beauty, die zu Dir passt.</h2>
-        <p>Von natürlichen Brows bis zum ausdrucksstarken Wimpern-Look – mit persönlicher Beratung und einem Ergebnis, das zu Dir passt.</p>
-      </div>
-      <div class="services-grid">
-        <article class="service-card featured reveal">
-          <div class="service-image"><img src="wimpern-ergebnis.jpg" alt="Wimpern- und Brow-Ergebnis bei Beauty by Belle" loading="lazy"></div>
-          <div class="service-body"><p class="card-kicker">Wimpern</p><h3>Wimpernverlängerung</h3><p>Light, Medium oder Mega – als Volume, Wispy oder Wet Look.</p><div class="service-price">ab <strong>65 €</strong></div></div>
-        </article>
-        <article class="service-card reveal">
-          <div class="service-image"><img src="wimpern-behandlung.jpg" alt="Wimpernbehandlung bei Beauty by Belle" loading="lazy"></div>
-          <div class="service-body"><p class="card-kicker">Lifting</p><h3>Lash- & Browlifting</h3><p>Für definierte, gepflegte Wimpern und Brauen – ganz ohne tägliches Styling.</p><div class="service-price"><strong>49 €</strong></div></div>
-        </article>
-        <article class="service-card reveal">
-          <div class="service-image service-image-logo"><img src="logo-bbb.jpg" alt="Beauty by Belle" loading="lazy"></div>
-          <div class="service-body"><p class="card-kicker">Permanent Make-up</p><h3>Powder / Ombre Brows</h3><p>Weicher Puder-Effekt und typgerechte Form. Nachbehandlung ist laut Preisliste inklusive.</p><div class="service-price"><strong>330 €</strong></div></div>
-        </article>
-        <article class="service-card reveal">
-          <div class="service-image"><img src="gesichtsbehandlung.jpg" alt="Klassische Gesichtsbehandlung bei Beauty by Belle" loading="lazy"></div>
-          <div class="service-body"><p class="card-kicker">Neu</p><h3>Klassische Gesichtsbehandlung</h3><p>Doppelte Reinigung, Peeling, Ausreinigung, Maske, Gesichtsmassage, Pflege und Ampulle – im Home Studio oder als Hausbesuch.</p><div class="service-price"><strong>60 €</strong></div></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="price-section section-anchor" id="preise">
-      <div class="price-wrap">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Preisliste</p>
-          <h2>Transparent & unkompliziert.</h2>
-          <p>Die Preise unten wurden aus Deiner aktuellen Instagram-Preisliste übernommen.</p>
-        </div>
-        <div class="price-layout">
-          <div class="price-groups reveal">
-            <article class="price-group">
-              <div><p class="card-kicker">Wimpernverlängerung</p><h3>Light</h3></div><strong>65 €</strong>
-              <p>Volume · Wispy · Wet Look</p>
-            </article>
-            <article class="price-group">
-              <div><p class="card-kicker">Wimpernverlängerung</p><h3>Medium</h3></div><strong>75 €</strong>
-              <p>Volume · Wispy · Wet Look</p>
-            </article>
-            <article class="price-group">
-              <div><p class="card-kicker">Wimpernverlängerung</p><h3>Mega</h3></div><strong>85 €</strong>
-              <p>Volume · Wispy · Wet Look</p>
-            </article>
-            <article class="price-group">
-              <div><p class="card-kicker">Brows</p><h3>Powder / Ombre Brows</h3></div><strong>330 €</strong>
-              <p>inkl. Nachbehandlung</p>
-            </article>
-            <article class="price-group">
-              <div><p class="card-kicker">Lifting</p><h3>Lash- & Browlifting</h3></div><strong>49 €</strong>
-            </article>
-            <article class="price-group">
-              <div><p class="card-kicker">Make-up</p><h3>Tagesmake-up</h3></div><strong>59 €</strong>
-              <p>Abendmake-up 99 € · Brautmake-up 180 € · Hairstyling +20 €</p>
-            </article>
-            <article class="price-group refill">
-              <div><p class="card-kicker">Nachfüllen</p><h3>Wimpern</h3></div><strong>–10 / –20 €</strong>
-              <p>Nach 3 Wochen –10 € · nach 2 Wochen –20 € gegenüber dem jeweiligen Neuset-Preis.</p>
-            </article>
-            <article class="price-group facial">
-              <div><p class="card-kicker">Gesicht</p><h3>Klassische Behandlung</h3></div><strong>60 €</strong>
-            </article>
+        <div class="hero-meta">
+          <div>
+            <span class="meta-label">Google</span>
+            <strong>5,0 ★★★★★</strong>
+            <small>10 Rezensionen</small>
           </div>
-          <aside class="price-poster reveal">
-            <img src="preisliste.jpg" alt="Originale Beauty by Belle Preisliste" loading="lazy">
-            <button class="text-button" type="button" data-lightbox="preisliste.jpg" data-alt="Beauty by Belle Preisliste">Preisliste groß ansehen ↗</button>
-          </aside>
+          <div>
+            <span class="meta-label">Standort</span>
+            <strong>Corneliusstraße 38</strong>
+            <small>80469 München</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-frame">
+          <img src="belle-portrait.jpg" alt="Belle – Beauty Artist und Gründerin von Beauty by Belle" fetchpriority="high">
+        </div>
+        <div class="hero-badge">Belle · Gründerin &amp; Beauty Artist</div>
+      </div>
+    </section>
+
+    <section class="info-strip" aria-label="Vorteile">
+      <article><strong>Luxuriöses Design</strong><span>Rosé, Gold und ein edler Markenauftritt.</span></article>
+      <article><strong>Persönliche Beratung</strong><span>Looks abgestimmt auf Deinen Stil.</span></article>
+      <article><strong>Saubere Ergebnisse</strong><span>Präzision, Ruhe und Liebe zum Detail.</span></article>
+      <article><strong>München</strong><span>Home Studio in zentraler Lage.</span></article>
+    </section>
+
+    <section class="section compact" id="services">
+      <div class="section-heading">
+        <p class="eyebrow">Services</p>
+        <h2>Behandlungen im Signature Look.</h2>
+        <p>Schlicht, feminin und hochwertig – passend zu dem, was man von einem professionellen Beauty Studio erwartet.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card featured">
+          <span class="service-kicker">Beliebt</span>
+          <h3>Wimpernverlängerung</h3>
+          <p>Für einen ausdrucksstarken und gepflegten Blick – mit sauberer Form und elegantem Finish.</p>
+          <div class="service-price">49 €</div>
+          <a href="https://wa.me/4915120498323?text=Hallo%20Belle%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Wimpernverl%C3%A4ngerung.%20Welche%20Termine%20sind%20frei%3F" target="_blank" rel="noopener">Jetzt anfragen</a>
+        </article>
+
+        <article class="service-card">
+          <span class="service-kicker">Brows</span>
+          <h3>Powder Brows</h3>
+          <p>Weiche, definierte Brows mit dauerhaft gepflegtem Look und typgerechter Form.</p>
+          <div class="service-price">149 €</div>
+          <a href="https://wa.me/4915120498323?text=Hallo%20Belle%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Powder%20Brows.%20Welche%20Termine%20sind%20frei%3F" target="_blank" rel="noopener">Jetzt anfragen</a>
+        </article>
+
+        <article class="service-card">
+          <span class="service-kicker">Skin</span>
+          <h3>Gesichtsbehandlung</h3>
+          <p>Doppelte Reinigung, Peeling, Ausreinigung, Maske, Massage, Pflege und Ampulle.</p>
+          <div class="service-price">49 €</div>
+          <a href="https://wa.me/4915120498323?text=Hallo%20Belle%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20Gesichtsbehandlung.%20Welche%20Termine%20sind%20frei%3F" target="_blank" rel="noopener">Jetzt anfragen</a>
+        </article>
+
+        <article class="service-card soft">
+          <span class="service-kicker">Zusätzlich</span>
+          <h3>Lash &amp; Browlifting</h3>
+          <p>Außerdem bietet Beauty by Belle Lifting-Behandlungen sowie Make-up für verschiedene Anlässe an.</p>
+          <div class="service-price">49 €</div>
+          <a href="https://wa.me/4915120498323?text=Hallo%20Belle%2C%20ich%20habe%20Interesse%20an%20Lash-%20%26%20Browlifting%20oder%20Make-up.%20Welche%20Termine%20sind%20frei%3F" target="_blank" rel="noopener">Jetzt anfragen</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section pricing-section" id="preise">
+      <div class="section-heading narrow">
+        <p class="eyebrow">Preise</p>
+        <h2>Schön übersichtlich. Schön professionell.</h2>
+        <p>Die wichtigsten Preise sind hier bewusst kompakt und klar dargestellt.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-box">
+          <span>Wimpernverlängerung</span>
+          <strong>49 €</strong>
+          <small>professioneller Lash Look</small>
+        </article>
+        <article class="price-box">
+          <span>Powder Brows</span>
+          <strong>149 €</strong>
+          <small>weich definierte Brows</small>
+        </article>
+        <article class="price-box">
+          <span>Gesichtsbehandlung</span>
+          <strong>49 €</strong>
+          <small>frisches, gepflegtes Hautbild</small>
+        </article>
+        <article class="price-box">
+          <span>Lash &amp; Browlifting</span>
+          <strong>49 €</strong>
+          <small>natürlicher Lifting-Effekt</small>
+        </article>
+      </div>
+
+      <div class="price-note">
+        <p><strong>Weitere Leistungen:</strong> Make-up für Tages-, Abend- oder besondere Anlässe sowie zusätzliche Beauty Services gerne auf Anfrage.</p>
+        <a class="inline-link" href="https://wa.me/4915120498323?text=Hallo%20Belle%2C%20ich%20habe%20eine%20Frage%20zu%20Deinen%20Leistungen%20und%20Preisen." target="_blank" rel="noopener">Preise &amp; Leistungen per WhatsApp anfragen →</a>
+      </div>
+    </section>
+
+    <section class="section feed-section" id="feed">
+      <div class="section-heading">
+        <p class="eyebrow">Beauty Feed</p>
+        <h2>Ein Eindruck, wie eine moderne Beauty Brand auftreten sollte.</h2>
+      </div>
+
+      <div class="feed-grid">
+        <article class="feed-card image-large">
+          <img src="wimpern-ergebnis.jpg" alt="Beauty Ergebnis – Wimpern und Brows bei Beauty by Belle" loading="lazy">
+          <div class="feed-copy">
+            <span>Signature Result</span>
+            <h3>Wimpern &amp; Brows</h3>
+            <p>Sauber, feminin und hochwertig – mit einem Look, der gepflegt und trotzdem natürlich wirkt.</p>
+          </div>
+        </article>
+
+        <article class="feed-card text-card gold-card">
+          <span>Founder</span>
+          <h3>Ich bin Belle.</h3>
+          <p>Beauty Artist und Gründerin von <strong>Beauty by Belle</strong> in München – mit Fokus auf feminine Ästhetik, schöne Details und ein rundum stimmiges Ergebnis.</p>
+          <a href="#belle">Mehr über Belle</a>
+        </article>
+
+        <article class="feed-card image-small">
+          <img src="wimpern-behandlung.jpg" alt="Wimpernbehandlung im Studio" loading="lazy">
+          <div class="feed-copy compact-copy">
+            <span>During Treatment</span>
+            <h3>Studio-Moment</h3>
+          </div>
+        </article>
+
+        <article class="feed-card text-card soft-card">
+          <span>Beauty by Belle</span>
+          <h3>Edles Studio-Gefühl</h3>
+          <p>Rosé, Gold, klare Formen und ein eleganter Auftritt – genau so, wie man es von einem hochwertigen Beauty Studio erwartet.</p>
+          <a href="https://www.instagram.com/beautybybelle_munich/" target="_blank" rel="noopener">Instagram öffnen</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section facial-section">
+      <div class="facial-card">
+        <div class="section-heading left">
+          <p class="eyebrow">Facial Ablauf</p>
+          <h2>Klassische Gesichtsbehandlung</h2>
+          <p>Die Behandlung ist klar strukturiert und vermittelt ein gepflegtes, luxuriöses Spa-Gefühl in kompakter Form.</p>
+        </div>
+        <div class="step-list">
+          <span>Doppelte Gesichtsreinigung</span>
+          <span>Peeling</span>
+          <span>Ausreinigung</span>
+          <span>Maske</span>
+          <span>Gesichtsmassage</span>
+          <span>Passende Pflege</span>
+          <span>Ampulle</span>
         </div>
       </div>
     </section>
 
-    <section class="special-section section-anchor" id="special">
-      <div class="special-copy reveal">
-        <p class="eyebrow">Aktuell auf Instagram</p>
-        <h2>Wiesn Beauty Special</h2>
-        <p>Auf dem aktuellen Instagram-Post werden Wimpernverlängerung für 49 €, Gesichtsbehandlung für 49 € und Powder Brows für 149 € beworben. Verfügbarkeit und Laufzeit bitte kurz per WhatsApp bestätigen lassen.</p>
-        <a class="btn btn-light" href="https://wa.me/4915120498323?text=Hallo%20Annabelle%2C%20ist%20das%20Wiesn-Beauty-Special%20noch%20verf%C3%BCgbar%3F" target="_blank" rel="noopener">Special anfragen</a>
+    <section class="section about-section" id="belle">
+      <div class="about-image-wrap">
+        <img src="belle-portrait.jpg" alt="Belle – Gründerin von Beauty by Belle" loading="lazy">
       </div>
-      <button class="special-poster reveal" type="button" data-lightbox="wiesn-angebot.jpg" data-alt="Wiesn Beauty Special von Beauty by Belle">
-        <img src="wiesn-angebot.jpg" alt="Wiesn Beauty Special von Beauty by Belle" loading="lazy">
-        <span>Antippen zum Vergrößern</span>
-      </button>
-    </section>
-
-    <section class="section results section-anchor" id="galerie">
-      <div class="section-heading light reveal">
-        <p class="eyebrow">Galerie</p>
-        <h2>Echte Einblicke aus Instagram & Studio.</h2>
-        <p>Die von Dir gesendeten Instagram-Screenshots wurden zugeschnitten – Statusleiste, Instagram-Menüs und Bedienelemente sind nicht Teil der Bilder.</p>
-      </div>
-      <div class="gallery-grid">
-        <button class="gallery-item tall reveal" type="button" data-lightbox="wimpern-ergebnis.jpg" data-alt="Wimpern Ergebnis"><img src="wimpern-ergebnis.jpg" alt="Wimpern Ergebnis" loading="lazy"><span>Wimpern & Brows</span></button>
-        <button class="gallery-item reveal" type="button" data-lightbox="wimpern-behandlung.jpg" data-alt="Wimpern Behandlung"><img src="wimpern-behandlung.jpg" alt="Wimpern Behandlung" loading="lazy"><span>Behandlung</span></button>
-        <button class="gallery-item reveal" type="button" data-lightbox="studio.jpg" data-alt="Beauty by Belle Studio"><img src="studio.jpg" alt="Beauty by Belle Studio" loading="lazy"><span>Studio</span></button>
-        <button class="gallery-item reveal" type="button" data-lightbox="gesichtsbehandlung.jpg" data-alt="Klassische Gesichtsbehandlung"><img src="gesichtsbehandlung.jpg" alt="Klassische Gesichtsbehandlung" loading="lazy"><span>Gesichtsbehandlung</span></button>
-        <button class="gallery-item portrait reveal" type="button" data-lightbox="annabelle.jpg" data-alt="Annabelle von Beauty by Belle"><img src="annabelle.jpg" alt="Annabelle von Beauty by Belle" loading="lazy"><span>Annabelle</span></button>
-      </div>
-      <div class="instagram-row reveal">
-        <div><span class="ig-dot">◎</span><p><strong>@beautybybelle_munich</strong><br><small>Mehr Arbeiten, Videos und aktuelle Reels direkt auf Instagram.</small></p></div>
-        <a class="btn btn-light" href="https://www.instagram.com/beautybybelle_munich/" target="_blank" rel="noopener">Instagram öffnen</a>
-      </div>
-    </section>
-
-    <section class="section about section-anchor" id="about">
-      <div class="about-image reveal"><img src="annabelle.jpg" alt="Annabelle Lukas von Beauty by Belle" loading="lazy"></div>
-      <div class="about-copy reveal">
-        <p class="eyebrow">Über Beauty by Belle</p>
-        <h2>Hi, ich bin Annabelle.</h2>
-        <p class="about-lead">Bei Beauty by Belle steht ein gepflegtes Ergebnis im Mittelpunkt, das zu Dir passt und Deine natürliche Schönheit unterstreicht.</p>
-        <p>Mit viel Liebe zum Detail und einem hohen Qualitätsanspruch nehme ich mir Zeit für Deine Wünsche – von Brows und Lashes bis Make-up und Gesichtsbehandlungen.</p>
-        <div class="signature">Annabelle <span>♡</span></div>
-      </div>
-    </section>
-
-    <section class="contact-section section-anchor" id="kontakt">
-      <div class="contact-card reveal">
-        <p class="eyebrow">Dein Termin</p>
-        <h2>Bereit für Deinen Beauty-Moment?</h2>
-        <p>Schreib mir unkompliziert über WhatsApp. Sag kurz, welche Behandlung Dich interessiert und welche Tage für Dich passen.</p>
-        <div class="contact-actions">
-          <a class="btn btn-primary" href="https://wa.me/4915120498323?text=Hallo%20Annabelle%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20bei%20Beauty%20by%20Belle%20anfragen." target="_blank" rel="noopener">WhatsApp Termin</a>
-          <a class="btn btn-ghost" href="tel:+4915120498323">01512 0498323</a>
+      <div class="about-copy">
+        <p class="eyebrow">Über Belle</p>
+        <h2>Belle – Beauty Artist &amp; Gründerin</h2>
+        <p class="about-lead">„Ich bin Belle – Beauty Artist und Gründerin von Beauty by Belle.“</p>
+        <p>Beauty by Belle verbindet feminine Eleganz mit moderner Ästhetik. Im Mittelpunkt stehen ein gepflegter Gesamteindruck, eine persönliche Beratung und Behandlungen, die nicht überladen wirken, sondern stilvoll und hochwertig.</p>
+        <div class="about-actions">
+          <a class="btn btn-primary small" href="https://www.instagram.com/beautybybelle_munich/" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn btn-secondary small" href="tel:+4915120498323">Anrufen</a>
         </div>
       </div>
-      <a class="location-card reveal" href="https://www.google.com/maps/search/?api=1&query=Beauty+by+Belle+Corneliusstra%C3%9Fe+38+80469+M%C3%BCnchen" target="_blank" rel="noopener">
-        <div class="pin">⌖</div><div><small>Studio</small><strong>Corneliusstraße 38</strong><span>80469 München</span><em>Route in Google Maps →</em></div>
-      </a>
+    </section>
+
+    <section class="section faq-section">
+      <div class="section-heading left narrow-left">
+        <p class="eyebrow">FAQ</p>
+        <h2>Häufig gefragt.</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>Wie kann ich einen Termin anfragen?<span>+</span></summary>
+          <p>Am schnellsten direkt über WhatsApp oder telefonisch. Alle Buttons auf dieser Seite führen direkt zur Kontaktaufnahme.</p>
+        </details>
+        <details>
+          <summary>Wo befindet sich das Studio?<span>+</span></summary>
+          <p>Beauty by Belle befindet sich in der Corneliusstraße 38, 80469 München.</p>
+        </details>
+        <details>
+          <summary>Welche Behandlungen werden angeboten?<span>+</span></summary>
+          <p>Wimpernverlängerung, Powder Brows, Gesichtsbehandlungen, Lash &amp; Browlifting sowie weitere Beauty Services und Make-up auf Anfrage.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="contact-section" id="kontakt">
+      <div class="contact-card">
+        <p class="eyebrow">Kontakt</p>
+        <h2>Bereit für Deinen Termin?</h2>
+        <p>Wenn Du eine Behandlung anfragen möchtest, wähle einfach den Weg, der für Dich am besten passt.</p>
+        <div class="contact-buttons">
+          <a class="btn btn-primary" href="https://wa.me/4915120498323?text=Hallo%20Belle%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20bei%20Beauty%20by%20Belle%20anfragen." target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-secondary" href="tel:+4915120498323">Telefon</a>
+          <a class="btn btn-secondary" href="https://www.instagram.com/beautybybelle_munich/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+
+      <div class="location-card">
+        <p class="eyebrow">Adresse</p>
+        <h3>Corneliusstraße 38</h3>
+        <p>80469 München</p>
+        <a class="inline-link" href="https://www.google.com/maps/search/?api=1&query=Beauty+by+Belle+Corneliusstra%C3%9Fe+38+80469+M%C3%BCnchen" target="_blank" rel="noopener">In Google Maps öffnen →</a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <div class="footer-brand"><img src="logo-bbb.jpg" alt="Beauty by Belle Logo" width="52" height="52"><div><strong>Beauty by Belle</strong><small>Munich Beauty Studio</small></div></div>
-    <div class="footer-links"><a href="https://www.instagram.com/beautybybelle_munich/" target="_blank" rel="noopener">Instagram</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+    <div class="footer-brand">
+      <img src="logo-bbb.jpg" alt="Beauty by Belle Logo" width="44" height="44">
+      <div>
+        <strong>Beauty by Belle</strong>
+        <small>Luxury Beauty Studio · München</small>
+      </div>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer Links">
+      <a href="https://www.instagram.com/beautybybelle_munich/" target="_blank" rel="noopener">Instagram</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+
     <p>© <span id="year"></span> Beauty by Belle · München</p>
   </footer>
 
-  <div class="mobile-booking"><a href="https://wa.me/4915120498323?text=Hallo%20Annabelle%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20bei%20Beauty%20by%20Belle%20anfragen." target="_blank" rel="noopener">Termin anfragen</a></div>
-
-  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Bildansicht">
-    <button class="lightbox-close" type="button" aria-label="Bildansicht schließen">×</button>
-    <img id="lightbox-image" src="" alt="">
+  <div class="mobile-cta">
+    <a href="https://wa.me/4915120498323?text=Hallo%20Belle%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Termin%20bei%20Beauty%20by%20Belle%20anfragen." target="_blank" rel="noopener">Termin anfragen</a>
   </div>
 
-  <script src="script.js?v=3.0.0"></script>
+  <script src="script.js?v=5.0.0" defer></script>
 </body>
 </html>
