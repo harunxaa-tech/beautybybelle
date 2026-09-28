@@ -240,3 +240,23 @@ footer{padding-top:38px;padding-bottom:34px}
   .studio-extra-tags{margin-top:15px}
   .studio-extra-link{margin-top:15px}
 }
+
+/* v5.6: no word split in Gesichtsbehandlung + cleaner partner overlap */
+.facial-intro h2{
+  overflow-wrap:normal;
+  word-break:normal;
+  hyphens:none;
+}
+.facial-intro h2 em{
+  hyphens:none;
+  word-break:normal;
+  overflow-wrap:normal;
+}
+@media (max-width:640px){
+  .facial-intro h2{font-size:clamp(36px,9.4vw,41px);line-height:1.02;}
+  .facial-intro h2 em{display:block;font-size:.78em;white-space:nowrap;letter-spacing:-.025em;}
+}
+@media (max-width:380px){
+  .facial-intro h2{font-size:35px;}
+  .facial-intro h2 em{font-size:.75em;}
+}
