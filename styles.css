@@ -260,3 +260,22 @@ footer{padding-top:38px;padding-bottom:34px}
   .facial-intro h2{font-size:35px;}
   .facial-intro h2 em{font-size:.75em;}
 }
+
+/* v5.7: hero photo switched to cropped studio trio + fix accent clipping on Präzise */
+.hero h1{
+  line-height:1;
+}
+.hero h1 em{
+  display:block;
+  line-height:1.08;
+  padding-top:.08em;
+}
+@media (max-width:640px){
+  .hero h1{
+    line-height:1.01;
+  }
+  .hero h1 em{
+    line-height:1.1;
+    padding-top:.09em;
+  }
+}

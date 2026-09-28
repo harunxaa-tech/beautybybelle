@@ -1,3 +1,8 @@
+UPDATE v5.7
+- Hero-Foto durch scharf zugeschnittenes Gruppenfoto ersetzt (Belle + Studio-Team)
+- Hero-Badge angepasst
+- Typografie bei „Präzise.“ korrigiert, damit Punkt/Akzent nicht abgeschnitten wirkt
+
 BEAUTY BY BELLE – COMPLETE UPDATE V5.6
 ======================================
 
