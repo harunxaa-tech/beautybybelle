@@ -329,3 +329,12 @@ footer{padding-top:38px;padding-bottom:34px}
   .price-details h3{font-size:25px}
   .price-details p{font-size:13px}
 }
+
+
+/* v6.3 compact services overview */
+.service-overview{max-width:920px;margin:8px auto 0;padding:24px 26px;border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(250,240,238,.92));border:1px solid rgba(179,137,75,.12);box-shadow:0 12px 28px rgba(90,58,65,.05)}
+.service-overview-chips{display:flex;flex-wrap:wrap;gap:10px}
+.service-overview-chips span{display:inline-flex;align-items:center;min-height:42px;padding:0 16px;border-radius:999px;background:#fff;color:#6f5358;border:1px solid rgba(179,137,75,.14);font-size:13px;font-weight:700;letter-spacing:.01em}
+.service-overview-link{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:18px;padding:0 20px;border-radius:999px;background:linear-gradient(135deg,#4a2731,#231519);color:#fff!important;font-size:13px;font-weight:850;box-shadow:0 12px 24px rgba(62,34,42,.14)}
+.service-overview-link::after{content:' ↗';color:#e8c996;font-size:15px;margin-left:8px}
+@media (max-width:767px){.service-overview{padding:20px;border-radius:24px}.service-overview-chips{gap:8px}.service-overview-chips span{width:100%;justify-content:center;min-height:40px;padding:0 14px}.service-overview-link{width:100%;margin-top:16px}}
