@@ -1,6 +1,32 @@
 (() => {
   'use strict';
 
+  // Always open/reload the website at the very top instead of restoring an old scroll position.
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  const resetToTop = () => {
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  };
+
+  window.addEventListener('pageshow', () => {
+    requestAnimationFrame(() => {
+      resetToTop();
+      setTimeout(resetToTop, 60);
+    });
+  });
+
+  window.addEventListener('load', () => {
+    requestAnimationFrame(resetToTop);
+  });
+
+
   const menuButton = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.main-nav');
 

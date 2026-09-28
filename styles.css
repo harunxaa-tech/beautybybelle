@@ -279,3 +279,27 @@ footer{padding-top:38px;padding-bottom:34px}
     padding-top:.09em;
   }
 }
+
+/* v5.8: swap hero/about images, shift team photo left, and fully fix Präzise accent clipping */
+.hero h1{
+  line-height:1.05;
+  overflow:visible;
+}
+.hero h1 em{
+  display:block;
+  line-height:1.12;
+  padding-top:.16em;
+  margin-top:.02em;
+}
+@media (max-width:640px){
+  .hero h1{
+    line-height:1.06;
+  }
+  .hero h1 em{
+    line-height:1.14;
+    padding-top:.18em;
+  }
+}
+.about-image-wrap img{
+  object-position:46% center;
+}
