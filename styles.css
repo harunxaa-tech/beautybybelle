@@ -614,3 +614,7 @@ footer{padding-top:38px;padding-bottom:34px}
 
 /* v6.10+: keeps words like “Gründerin” intact on narrow mobile screens */
 .no-break{white-space:nowrap;word-break:keep-all;overflow-wrap:normal;hyphens:none;}
+
+
+/* v6.12 final accessibility polish */
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid rgba(179,137,75,.58);outline-offset:4px;border-radius:10px}
